@@ -3,12 +3,14 @@ package com.escola.api.escola.api.models;
 import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -34,6 +36,9 @@ public class Turma implements Serializable{
 
     @Column(name = "dataTermino")
     private LocalDate dataTermino;
+
+    @ManyToMany
+    private List<Aluno> alunosList;
 
     public Turma() {
     }
