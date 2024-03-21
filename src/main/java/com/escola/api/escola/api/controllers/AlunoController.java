@@ -1,7 +1,6 @@
 package com.escola.api.escola.api.controllers;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -43,6 +42,7 @@ public class AlunoController {
     @PutMapping("/update/{id}")
     public ResponseEntity<Aluno> update(@PathVariable Long id, @RequestBody Aluno aluno) {
         aluno.setId(id);
+        alunoService.save(aluno);
         return ResponseEntity.ok().body(aluno);
     }
 
