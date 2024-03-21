@@ -3,12 +3,16 @@ package com.escola.api.escola.api.models;
 import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.List;
+
+import org.hibernate.annotations.ManyToAny;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -34,6 +38,10 @@ public class Aluno implements Serializable {
 
     @Column(name = "dt_nascimento")
     private LocalDate dtNascimento;
+    
+
+    @ManyToMany
+    private List<Turma> turmasList;
 
     public Aluno() {
     }
