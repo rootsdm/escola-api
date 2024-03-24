@@ -15,17 +15,17 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "tbl_turma")
-public class Turma implements Serializable{
-    
+public class Turma implements Serializable {
+
     @Serial
     private static final Long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idTurma")
+    @Column(name = "idTurma", nullable = false)
     private Long idTurma;
 
-    @Column(name = "nome")
+    @Column(name = "nome", unique = true)
     private String nome;
 
     @Column(name = "cargaHoraria")
@@ -94,9 +94,5 @@ public class Turma implements Serializable{
     public void setDataTermino(LocalDate dataTermino) {
         this.dataTermino = dataTermino;
     }
-
-
-
-
 
 }
