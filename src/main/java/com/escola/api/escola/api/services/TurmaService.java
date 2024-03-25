@@ -1,12 +1,10 @@
 package com.escola.api.escola.api.services;
 
-import java.time.LocalDate;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.escola.api.escola.api.models.Aluno;
 import com.escola.api.escola.api.models.Turma;
 import com.escola.api.escola.api.repositorys.TurmaRepository;
 

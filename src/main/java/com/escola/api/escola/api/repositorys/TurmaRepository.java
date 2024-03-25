@@ -10,8 +10,11 @@ import com.escola.api.escola.api.models.Turma;
 
 @Repository
 public interface TurmaRepository extends JpaRepository<Turma, Long> {
-    
+
     List<Turma> findAll();
 
+    Optional<List<Turma>> findByNome(String nome);
+
+    Optional<List<Turma>> findByNomeLike(String nome);
 
 }
