@@ -19,4 +19,6 @@ public interface AlunoRepository extends JpaRepository<Aluno, Long> {
 
     Optional<List<Aluno>> findByNomeLike(String nome);
 
+    
+
 }
