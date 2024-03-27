@@ -4,6 +4,9 @@ import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -33,6 +36,7 @@ public class Aluno implements Serializable {
     @Column(name = "email", unique = true)
     private String email;
 
+    @JsonFormat(pattern = "dd/MM/yyyy")
     @Column(name = "dt_nascimento")
     private LocalDate dtNascimento;
 
@@ -42,13 +46,18 @@ public class Aluno implements Serializable {
     public Aluno() {
     }
 
-    public Aluno(Long id, String nome, String sobrenome, String email, LocalDate dtNascimento) {
+   
+
+    public Aluno(Long id, String nome, String sobrenome, String email, LocalDate dtNascimento, List<Turma> turmasList) {
         this.id = id;
         this.nome = nome;
         this.sobrenome = sobrenome;
         this.email = email;
         this.dtNascimento = dtNascimento;
+        this.turmasList = turmasList;
     }
+
+
 
     public static Long getSerialversionuid() {
         return serialVersionUID;
@@ -94,4 +103,18 @@ public class Aluno implements Serializable {
         this.dtNascimento = dtNascimento;
     }
 
+
+
+    public List<Turma> getTurmasList() {
+        return turmasList;
+    }
+
+
+
+    public void setTurmasList(List<Turma> turmasList) {
+        this.turmasList = turmasList;
+    }
+
+
+    
 }

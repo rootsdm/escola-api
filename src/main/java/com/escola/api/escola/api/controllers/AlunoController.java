@@ -89,5 +89,16 @@ public class AlunoController {
         return ResponseEntity.status(HttpStatus.OK).body(optionalAluno.get());
 
     }
+    @Operation(summary = "Busca Aluno por Nome")
+    @GetMapping("/nome/{nome}")
+    public ResponseEntity<Optional<List<Aluno>>> findByNome(@PathVariable("nome") String nome) {
+        return ResponseEntity.status(HttpStatus.OK).body(alunoService.findByNome(nome));
+    }
+
+    @Operation(summary = "Busca Aluno por parte do Nome")
+    @GetMapping("/busca/nome/{nome}")
+    public ResponseEntity<Optional<List<Aluno>>> findByNomeLike(@PathVariable("nome") String nome) {
+        return ResponseEntity.status(HttpStatus.OK).body(alunoService.findByNomeLike("%" + nome + "%"));
+    }
 
 }

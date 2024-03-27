@@ -1,5 +1,6 @@
 package com.escola.api.escola.api.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,5 +42,17 @@ public class AlunoService {
         }
         return false;
     }
+
+    public Optional<List<Aluno>> findByNome(String nome) {
+        return alunoRepository.findByNome(nome);
+
+    }
+
+    public Optional<List<Aluno>> findByNomeLike(String nome) {
+        return alunoRepository.findByNomeLike(nome);
+
+    }
+
+
 
 }
