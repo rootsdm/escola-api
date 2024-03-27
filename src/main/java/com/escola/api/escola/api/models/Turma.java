@@ -54,8 +54,8 @@ public class Turma implements Serializable {
         this.cargaHoraria = cargaHoraria;
         this.dataInicio = dataInicio;
         this.dataTermino = dataTermino;
-        this.alunosList = alunosList;
-    }
+        this.alunosList = alunosList; 
+    } 
 
     public Long getIdTurma() {
         return idTurma;
