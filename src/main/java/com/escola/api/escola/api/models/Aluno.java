@@ -46,8 +46,6 @@ public class Aluno implements Serializable {
     public Aluno() {
     }
 
-   
-
     public Aluno(Long id, String nome, String sobrenome, String email, LocalDate dtNascimento, List<Turma> turmasList) {
         this.id = id;
         this.nome = nome;
@@ -56,8 +54,6 @@ public class Aluno implements Serializable {
         this.dtNascimento = dtNascimento;
         this.turmasList = turmasList;
     }
-
-
 
     public static Long getSerialversionuid() {
         return serialVersionUID;
@@ -103,18 +99,12 @@ public class Aluno implements Serializable {
         this.dtNascimento = dtNascimento;
     }
 
-
-
     public List<Turma> getTurmasList() {
         return turmasList;
     }
-
-
 
     public void setTurmasList(List<Turma> turmasList) {
         this.turmasList = turmasList;
     }
 
-
-    
 }
